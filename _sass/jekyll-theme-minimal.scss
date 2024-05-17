@@ -217,7 +217,7 @@ footer {
     margin:0;
   }
 
-  header, section, footer {
+  header, section, right_section, footer {
     float:none;
     position:static;
     width:auto;
@@ -227,6 +227,10 @@ footer {
     padding-right:320px;
   }
 
+  right_section {
+    padding-right:320px;
+  }
+  
   section {
     border:1px solid #e5e5e5;
     border-width:1px 0;
@@ -253,7 +257,9 @@ footer {
   header {
     padding:0;
   }
-
+  right_section {
+    padding:0;
+  }
   header ul, header p.view {
     position:static;
   }
