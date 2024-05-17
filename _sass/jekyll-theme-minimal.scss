@@ -185,15 +185,15 @@ strong {
   color:#222;
 }
 section {
-  width: 500px;
-  float: left; /* Changed from right to left */
+  width: calc(100% - 270px - 20px); /* 减去right_section的宽度和一些间隔 */
+  float: left;
   padding-bottom: 50px;
 }
 
 right_section {
-  width: 270px; /* Adjust width as needed */
-  float: right; /* Floats to the right */
-  padding-bottom: 50px; /* Optional padding */
+  width: 270px; /* 根据实际情况调整宽度 */
+  float: right;
+  padding-bottom: 50px;
 }
 
 small {
@@ -228,7 +228,7 @@ footer {
   }
 
   header {
-    padding-right: 0; /* Adjusted padding for responsiveness */
+    padding-right: 0;
   }
 
   section, right_section {
