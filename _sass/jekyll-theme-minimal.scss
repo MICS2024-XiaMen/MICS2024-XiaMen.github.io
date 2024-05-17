@@ -184,104 +184,103 @@ strong {
   display:block;
   color:#222;
 }
-
 section {
-  width:500px;
-  float:right;
-  padding-bottom:50px;
+  width: 500px;
+  float: left; /* Changed from right to left */
+  padding-bottom: 50px;
+}
+
+right_section {
+  width: 270px; /* Adjust width as needed */
+  float: right; /* Floats to the right */
+  padding-bottom: 50px; /* Optional padding */
 }
 
 small {
-  font-size:11px;
+  font-size: 11px;
 }
 
 hr {
-  border:0;
-  background:#e5e5e5;
-  height:1px;
-  margin:0 0 20px;
+  border: 0;
+  background: #e5e5e5;
+  height: 1px;
+  margin: 0 0 20px;
 }
 
 footer {
-  width:270px;
-  float:left;
-  position:fixed;
-  bottom:50px;
-  -webkit-font-smoothing:subpixel-antialiased;
+  width: 270px;
+  float: left;
+  position: fixed;
+  bottom: 50px;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 @media print, screen and (max-width: 960px) {
-
   div.wrapper {
-    width:auto;
-    margin:0;
+    width: auto;
+    margin: 0;
   }
 
-  header, section, right_section, footer {
-    float:none;
-    position:static;
-    width:auto;
+  header, section, footer, right_section {
+    float: none;
+    position: static;
+    width: auto;
   }
 
   header {
-    padding-right:320px;
+    padding-right: 0; /* Adjusted padding for responsiveness */
   }
 
-  right_section {
-    padding-right:320px;
-  }
-  
-  section {
-    border:1px solid #e5e5e5;
-    border-width:1px 0;
-    padding:20px 0;
-    margin:0 0 20px;
+  section, right_section {
+    border: 1px solid #e5e5e5;
+    border-width: 1px 0;
+    padding: 20px 0;
+    margin: 0 0 20px;
   }
 
   header a small {
-    display:inline;
+    display: inline;
   }
 
   header ul {
-    position:absolute;
-    right:50px;
-    top:52px;
+    position: absolute;
+    right: 50px;
+    top: 52px;
   }
 }
 
 @media print, screen and (max-width: 720px) {
   body {
-    word-wrap:break-word;
+    word-wrap: break-word;
   }
 
-  header {
-    padding:0;
+  header, right_section {
+    padding: 0;
   }
-  right_section {
-    padding:0;
-  }
+
   header ul, header p.view {
-    position:static;
+    position: static;
   }
 
   pre, code {
-    word-wrap:normal;
+    word-wrap: normal;
   }
 }
 
 @media print, screen and (max-width: 480px) {
   body {
-    padding:15px;
+    padding: 15px;
   }
 
   .downloads {
-    width:99%;
+    width: 99%;
   }
 
   .downloads li, .downloads li + li + li {
-    width:33%;
+    width: 33%;
   }
 }
+
 
 @media print {
   body {
