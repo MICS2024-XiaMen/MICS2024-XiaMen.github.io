@@ -182,31 +182,30 @@ strong {
 
 
 
-
 header {
-  width: 270px;
+  width: calc(20% - 10px); /* 留出一些间隙 */
   position: fixed;
-  left: 0;  /* 确保header固定在最左边 */
-  top: 0;   /* 从顶部开始 */
-  height: 100%;  /* 让header占满整个视窗的高度 */
+  left: 0;
+  top: 0;
+  height: 100%;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
 section {
-  width: 500px;
-  margin-left: 270px;  /* 从header的右边边缘开始 */
-  margin-right: 270px; /* 留出right_section的空间 */
+  width: calc(60% - 20px); /* 留出间隙 */
+  margin-left: calc(20%); /* 等于header的宽度 */
+  margin-right: calc(20%); /* 等于right_section的宽度 */
   padding-bottom: 50px;
   position: relative;
-  box-sizing: border-box; /* 包括padding和border在内的宽度计算方式 */
+  box-sizing: border-box;
 }
 
 right_section {
-  width: 270px;
+  width: calc(20% - 10px); /* 留出一些间隙 */
   position: fixed;
   right: 0;
   top: 0;
-  height: 100%;  /* 让right_section占满整个视窗的高度 */
+  height: 100%;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -222,14 +221,13 @@ hr {
 }
 
 footer {
-  width: 270px;
+  width: calc(20% - 10px);
   position: fixed;
   bottom: 0;
   left: 0;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-/* 媒体查询部分保持不变，确保在小屏幕上的适应性 */
 @media print, screen and (max-width: 960px) {
   div.wrapper {
     width: auto;
