@@ -184,15 +184,25 @@ strong {
   display:block;
   color:#222;
 }
+
+
+/* Assuming the total width of the container should now be around 1040px */
 section {
-  width: calc(100% - 270px - 20px); /* 减去right_section的宽度和一些间隔 */
+  width: 500px; /* Adjust the width as needed */
   float: left;
   padding-bottom: 50px;
 }
 
 right_section {
-  width: 270px; /* 根据实际情况调整宽度 */
+  width: 270px; /* This keeps right_section on the narrower side */
   float: right;
+  padding-bottom: 50px;
+}
+
+/* Adding a header assuming it's meant to be part of the layout */
+header {
+  width: 270px; /* Adjust if the header needs different spacing */
+  float: left;
   padding-bottom: 50px;
 }
 
@@ -215,7 +225,7 @@ footer {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-@media print, screen and (max-width: 960px) {
+@media print, screen and (max-width: 1200px) {
   div.wrapper {
     width: auto;
     margin: 0;
@@ -227,25 +237,11 @@ footer {
     width: auto;
   }
 
-  header {
-    padding-right: 0;
-  }
-
   section, right_section {
     border: 1px solid #e5e5e5;
     border-width: 1px 0;
     padding: 20px 0;
     margin: 0 0 20px;
-  }
-
-  header a small {
-    display: inline;
-  }
-
-  header ul {
-    position: absolute;
-    right: 50px;
-    top: 52px;
   }
 }
 
@@ -258,10 +254,6 @@ footer {
     padding: 0;
   }
 
-  header ul, header p.view {
-    position: static;
-  }
-
   pre, code {
     word-wrap: normal;
   }
@@ -271,15 +263,8 @@ footer {
   body {
     padding: 15px;
   }
-
-  .downloads {
-    width: 99%;
-  }
-
-  .downloads li, .downloads li + li + li {
-    width: 33%;
-  }
 }
+
 
 
 @media print {
