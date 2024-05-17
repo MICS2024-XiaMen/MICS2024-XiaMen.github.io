@@ -118,12 +118,6 @@ kbd {
   vertical-align: middle;
 }
 
-header {
-  width:270px;
-  float:left;
-  position:fixed;
-  -webkit-font-smoothing:subpixel-antialiased;
-}
 
 ul.downloads {
   list-style:none;
@@ -185,25 +179,31 @@ strong {
   color:#222;
 }
 
-/* Assuming header represents the left section */
+
+
 header {
-  width: calc(33.3% - 10px); /* Adjusted width */
-  float: left; /* Ensures it stays to the left */
-  padding-bottom: 50px;
+  width: 270px;
+  float: left;
+  position: fixed;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 section {
-  width: calc(33.3% - 10px); /* Adjusted width */
-  float: left; /* Changed from right to left */
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
   padding-bottom: 50px;
-  margin-left: 5px; /* Added a small margin for spacing */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 right_section {
-  width: calc(33.3% - 10px); /* New section with adjusted width */
-  float: left; /* Ensures it aligns on the right */
-  padding-bottom: 50px;
-  margin-left: 5px; /* Added a small margin for spacing */
+  width: 270px;
+  float: right;
+  position: fixed;
+  right: 0;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 small {
@@ -238,7 +238,7 @@ footer {
   }
 
   header {
-    padding-right: 320px;
+    padding-right: 0;
   }
 
   section {
@@ -264,12 +264,10 @@ footer {
     word-wrap: break-word;
   }
 
-  header {
+  header, right_section {
     padding: 0;
   }
-  right_section {
-    padding: 0;
-  }
+
   header ul, header p.view {
     position: static;
   }
@@ -292,6 +290,21 @@ footer {
     width: 33%;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
