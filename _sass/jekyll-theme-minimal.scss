@@ -187,38 +187,27 @@ strong {
 
 
 
-
-
-
-body {
-  display: flex;
-  height: 100vh; /* 使用整个视窗高度 */
-  margin: 0;     /* 去除默认的margin */
-}
-
 header {
-  flex: 1;        /* 占据1份比例 */
-  -webkit-font-smoothing: subpixel-antialiased;
+  width: 270px; /* 左侧宽度 */
+  float: left;
   position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 section {
-  flex: 3;        /* 占据3份比例 */
+  width: 500px; /* 中间部分宽度 */
+  margin-left: 270px; /* 等于 header 的宽度，使其居中 */
   padding-bottom: 50px;
-  overflow-y: auto; /* 如果内容超出高度，则允许滚动 */
-  position: relative;
+  float: left; /* 改为左浮动，确保它不会移到下一行 */
 }
 
 right_section {
-  flex: 1;        /* 占据1份比例 */
-  -webkit-font-smoothing: subpixel-antialiased;
+  width: 270px; /* 新的右侧部分宽度，可以根据需要调整 */
+  float: left; /* 同样左浮动 */
+  margin-left: 770px; /* header 宽度 + section 宽度，确保它在右侧 */
   position: fixed;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  right: 0px; /* 定位到右边界 */
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 small {
@@ -229,32 +218,48 @@ hr {
   border: 0;
   background: #e5e5e5;
   height: 1px;
-  margin: 0;
+  margin: 0 0 20px;
 }
 
 footer {
+  width: 270px;
+  float: left;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  bottom: 50px;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-/* 媒体查询部分保持不变，确保在小屏幕上的适应性 */
 @media print, screen and (max-width: 960px) {
-  body {
-    flex-direction: column; /* 在小屏幕上改为垂直布局 */
+  div.wrapper {
+    width: auto;
+    margin: 0;
   }
 
-  header, section, right_section, footer {
+  header, section, footer, right_section {
+    float: none;
     position: static;
     width: auto;
   }
 
+  header {
+    padding-right: 320px;
+  }
+
   section {
     border: 1px solid #e5e5e5;
+    border-width: 1px 0;
     padding: 20px 0;
-    margin: 20px 0;
+    margin: 0 0 20px;
+  }
+
+  header a small {
+    display: inline;
+  }
+
+  header ul {
+    position: absolute;
+    right: 50px;
+    top: 52px;
   }
 }
 
@@ -262,11 +267,33 @@ footer {
   body {
     word-wrap: break-word;
   }
+
+  header {
+    padding: 0;
+  }
+  right_section {
+    padding: 0;
+  }
+  header ul, header p.view {
+    position: static;
+  }
+
+  pre, code {
+    word-wrap: normal;
+  }
 }
 
 @media print, screen and (max-width: 480px) {
   body {
     padding: 15px;
+  }
+
+  .downloads {
+    width: 99%;
+  }
+
+  .downloads li, .downloads li + li + li {
+    width: 33%;
   }
 }
 
